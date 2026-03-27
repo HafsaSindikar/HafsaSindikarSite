@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="./src/assets/hero.png" />
   </head>
 
   <body>
@@ -142,9 +143,11 @@
           <div class="hero-avatar-wrapper">
             <div class="hero-avatar">
               <img
-                src="./src/assets/hero.jpeg"
+                src="./src/assets/hero.png"
                 style="object-position: center 20%"
                 alt="Hafsa Profile"
+                fetchpriority="high"
+                loading="eager"
               />
               <div class="online-dot"></div>
             </div>
@@ -263,7 +266,7 @@
           <div class="about-grid">
             <div class="about-image-wrapper">
               <div class="paint-stroke-mask">
-                <img src="./src/assets/heroimg.png" alt="Hafsa About" />
+                <img src="./src/assets/heroimg.png" alt="Hafsa About" loading="lazy" />
               </div>
             </div>
             <div class="about-text">
