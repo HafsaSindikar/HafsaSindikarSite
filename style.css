@@ -15,6 +15,7 @@
   --accent-pink: #fcd5ce;
   --accent-lavender: #c4bbf0;
   --accent-blue: #c8e7ff;
+  --avatar-glow: rgba(252, 161, 161, 0.6);
   
   --text-main: #4a4a4a;
   --text-muted: #8c8c8c;
@@ -40,6 +41,7 @@ html.dark {
   --accent-pink: #eeb5ae;
   --accent-lavender: #9a8deb;
   --accent-blue: #94cbf7;
+  --avatar-glow: rgba(238, 181, 174, 0.5);
 
   --text-main: #f0eef5;
   --text-muted: #a09dae;
@@ -382,16 +384,25 @@ html.dark .theme-toggle .moon-icon { display: block; }
   box-shadow: 0 0 0 4px var(--accent-lavender), var(--shadow-hover);
 }
 
-.online-dot {
+.hero-avatar::after {
+  content: '';
   position: absolute;
-  bottom: 0px;
-  right: 5px;
-  width: 22px;
-  height: 22px;
-  background-color: #4CAF50;
-  border: 4px solid var(--bg-primary);
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
   border-radius: 50%;
-  animation: pulseAvatar 2s infinite;
+  box-shadow: 0 0 0 0 var(--avatar-glow);
+  animation: avatarGlow 2.5s infinite;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0; /* will animate */
+}
+
+/* Pause and hide the glow on hover for a cleaner effect */
+.hero-avatar:hover::after {
+  animation-play-state: paused;
+  opacity: 0 !important;
 }
 
 @keyframes popUpAvatar {
@@ -399,10 +410,19 @@ html.dark .theme-toggle .moon-icon { display: block; }
   100% { transform: scale(1) translateY(0) rotate(0deg); opacity: 1; }
 }
 
-@keyframes pulseAvatar {
-  0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+@keyframes avatarGlow {
+  0% { 
+    box-shadow: 0 0 0 0 var(--avatar-glow); 
+    opacity: 0.9; 
+  }
+  70% { 
+    box-shadow: 0 0 0 25px var(--avatar-glow); 
+    opacity: 0; 
+  }
+  100% { 
+    box-shadow: 0 0 0 0 var(--avatar-glow); 
+    opacity: 0; 
+  }
 }
 
 /* Trait and Arrows */
