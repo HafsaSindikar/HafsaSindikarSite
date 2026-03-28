@@ -185,18 +185,27 @@ html.dark .tech-highlight {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 5%;
+  padding: 1.5rem 5%;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(var(--bg-primary), 0);
+  background: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: var(--transition);
+}
+
+.navbar-scrolled {
+  background: var(--bg-primary);
+  padding: 1rem 5%;
+  box-shadow: var(--shadow-sm);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
-html.dark .navbar {
-  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+
+html.dark .navbar-scrolled {
+  background: var(--bg-primary);
 }
 
 .logo {
@@ -855,9 +864,100 @@ footer {
 }
 
 /* Responsive */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  z-index: 101;
+  transition: var(--transition);
+}
+
 @media (max-width: 768px) {
-  .about .content {
-    padding: 0 1rem;
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-socials {
+    display: none;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: var(--bg-primary);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transition: var(--transition);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  .nav-link {
+    font-size: 1.5rem;
+  }
+
+  .hero {
+    padding-top: 100px;
+    text-align: center;
+  }
+
+  .hero-avatar-wrapper {
+    transform: scale(0.9);
+  }
+
+  .trait-text {
+    display: none; /* Hide traits on small mobile to avoid clutter */
+  }
+
+  .traits-arrows {
+    display: none;
+  }
+
+  .title {
+    font-size: 3rem;
+    white-space: normal;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 10%;
+  }
+
+  .about-grid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-image-wrapper {
+    width: 220px;
+    height: 280px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-box {
+    padding: 2rem 1rem;
   }
 }
 

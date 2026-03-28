@@ -10,6 +10,40 @@ if (savedTheme === 'dark') {
   htmlElement.classList.add('dark')
 }
 
+// Navbar Scroll Logic
+const navbar = document.querySelector('.navbar')
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('navbar-scrolled')
+  } else {
+    navbar.classList.remove('navbar-scrolled')
+  }
+})
+
+// Mobile Menu Logic
+const mobileMenuBtn = document.getElementById('mobile-menu-btn')
+const navMenu = document.getElementById('nav-menu')
+
+if (mobileMenuBtn && navMenu) {
+  mobileMenuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active')
+    
+    // Toggle menu icon between burger and close
+    const isExpanded = navMenu.classList.contains('active')
+    mobileMenuBtn.innerHTML = isExpanded 
+      ? `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`
+      : `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
+  })
+
+  // Close menu when a link is clicked
+  navMenu.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active')
+      mobileMenuBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
+    })
+  })
+}
+
 // Ensure star/moon is animated well
 themeBtn.addEventListener('click', () => {
   htmlElement.classList.toggle('dark')
