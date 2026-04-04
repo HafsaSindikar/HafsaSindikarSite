@@ -15,6 +15,7 @@
   --accent-pink: #fcd5ce;
   --accent-lavender: #c4bbf0;
   --accent-blue: #c8e7ff;
+  --accent-ongoing: #d1fae5;
   --avatar-glow: rgba(252, 161, 161, 0.6);
   
   --text-main: #4a4a4a;
@@ -41,6 +42,7 @@ html.dark {
   --accent-pink: #eeb5ae;
   --accent-lavender: #9a8deb;
   --accent-blue: #94cbf7;
+  --accent-ongoing: #065f46;
   --avatar-glow: rgba(238, 181, 174, 0.5);
 
   --text-main: #f0eef5;
@@ -721,6 +723,44 @@ html.dark .blob {
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 1rem;
+}
+
+.tag-ongoing {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  background: var(--accent-ongoing);
+  color: #065f46;
+  border-radius: var(--pill-radius);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(6, 95, 70, 0.1);
+  letter-spacing: 0.02em;
+}
+
+html.dark .tag-ongoing {
+  color: #10b981;
+  background: rgba(6, 95, 70, 0.4);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.tag-ongoing::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: currentColor;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-ongoing 2s infinite;
+}
+
+@keyframes pulse-ongoing {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
 }
 
 .card-content h3 {
