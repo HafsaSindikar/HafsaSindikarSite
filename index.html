@@ -5,11 +5,11 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hafsa | Software Engineer</title>
-    <!-- Modern font combination: Playfair Display for accents and Nunito/Quicksand for body -->
+    <!-- Modern tech font combination -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="preload" as="image" href="./src/assets/hero.png" />
@@ -158,63 +158,19 @@
 
     <main>
       <section id="hero" class="hero parallax" data-speed="0.02">
-        <!-- Sparkles overlay -->
         <div class="sparkles-container" id="sparkles"></div>
+        <!-- Floating descriptive words map -->
+        <div class="floating-words-container" id="floating-words">
+          <span class="floating-word" data-speed="0.05" style="top: 20%; left: 10%;">Creative</span>
+          <span class="floating-word" data-speed="-0.03" style="top: 15%; right: 15%;">Problem Solver</span>
+          <span class="floating-word" data-speed="0.08" style="top: 75%; left: 8%;">Adaptable</span>
+          <span class="floating-word" data-speed="-0.06" style="top: 80%; right: 12%;">Design Oriented</span>
+          <span class="floating-word" data-speed="0.04" style="top: 40%; right: 6%;">UX Enthusiast</span>
+          <span class="floating-word" data-speed="-0.05" style="top: 45%; left: 5%;">Developer</span>
+        </div>
+
         <div class="hero-content slide-up">
-          <div class="hero-avatar-wrapper">
-            <div class="hero-avatar">
-              <img
-                src="./src/assets/hero.png"
-                style="object-position: center 20%"
-                alt="Hafsa Profile"
-                fetchpriority="high"
-                loading="eager"
-              />
-            </div>
-            <!-- The outward pointing traits overlay -->
-            <div class="traits-container">
-              <svg
-                class="traits-arrows"
-                viewBox="0 0 110 110"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <!-- Top-Left (Knotted) -->
-                <path
-                  d="M -5 15 C -40 25, -30 -10, -100 -5 M -90 -10 L -100 -5 L -95 5"
-                ></path>
-                <!-- Mid-Left (Swoop Drop) -->
-                <path
-                  d="M -15 55 Q -80 30 -150 60 M -140 50 L -150 60 L -140 65"
-                ></path>
-                <!-- Bottom-Left (Medium Curve) -->
-                <path
-                  d="M -5 95 Q -40 120 -100 115 M -90 120 L -100 115 L -95 105"
-                ></path>
-                <!-- Top-Right (Zigzag) -->
-                <path
-                  d="M 115 15 L 135 5 L 150 15 L 175 -5 L 190 5 L 210 -5 M 200 -10 L 210 -5 L 205 5"
-                ></path>
-                <!-- Mid-Right (Swoop Up) -->
-                <path
-                  d="M 125 55 Q 190 80 260 50 M 250 55 L 260 50 L 250 40"
-                ></path>
-                <!-- Bottom-Right (S-Curve) -->
-                <path
-                  d="M 115 95 C 150 100, 160 130, 210 115 M 200 120 L 210 115 L 205 105"
-                ></path>
-              </svg>
-              <span class="trait-text text-1">Creative</span>
-              <span class="trait-text text-2">Problem Solver</span>
-              <span class="trait-text text-3">Adaptable</span>
-              <span class="trait-text text-4">Design Oriented</span>
-              <span class="trait-text text-5">UX Enthusiast</span>
-              <span class="trait-text text-6">Developer</span>
-            </div>
-          </div>
+
           <p class="greeting">Hello, I'm</p>
           <h1 class="title">Hafsa Sindikar</h1>
           <h2 class="subtitle">
@@ -230,59 +186,19 @@
           </div>
         </div>
         <div class="hero-decorator parallax" data-speed="0.05">
-          <svg
-            class="blob blob-1"
-            viewBox="0 0 200 200"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="currentColor"
-              d="M60.5,-54.2C75,-35.1,81.1,-7.2,74.5,16.8C67.9,40.8,48.7,60.8,25.4,69.5C2.1,78.2,-25.2,75.4,-45.8,61.9C-66.4,48.3,-80.3,24.1,-78.9,1.4C-77.5,-21.3,-60.8,-42.6,-41.8,-63.3C-22.8,-84,-1.5,-104.1,12.5,-93C26.5,-81.9,33,-59.6,46,-40.4L60.5,-54.2Z"
-              transform="translate(100 100)"
-            />
-          </svg>
-          <svg
-            class="blob blob-2"
-            viewBox="0 0 200 200"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="currentColor"
-              d="M42.7,-74.6C56.6,-70.6,70,-62,80.1,-49.6C90.2,-37.2,97,-21,95,-5.5C92.9,9.9,82,24.6,70.9,38C59.9,51.4,48.7,63.6,35.2,71.2C21.7,78.8,5.9,81.9,-9.5,80.5C-24.9,79.1,-39.8,73.1,-52.4,63.5C-65,53.8,-75.3,40.5,-81.7,25.3C-88.1,10.2,-90.6,-6.9,-85,-21.5C-79.5,-36,-65.9,-48,-52.2,-53.4C-38.6,-58.8,-24.8,-57.6,-10.5,-61.8C3.8,-66,28.8,-78.6,42.7,-74.6Z"
-              transform="translate(100 100)"
-            />
-          </svg>
+          <div class="glow-orb orb-1"></div>
+          <div class="glow-orb orb-2"></div>
         </div>
       </section>
 
-      <!-- Scalloped Divider -->
-      <div class="divider">
-        <svg
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-            opacity=".25"
-          ></path>
-          <path
-            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
-            opacity=".5"
-          ></path>
-          <path
-            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
-          ></path>
-        </svg>
-      </div>
+      <!-- Divider removed for a cleaner tech look -->
 
       <section id="about" class="about">
         <div class="content fade-in">
           <h2 class="section-title">About Me</h2>
           <div class="about-grid">
             <div class="about-image-wrapper">
-              <div class="paint-stroke-mask">
+              <div class="tech-image-mask">
                 <img
                   src="./src/assets/heroimg.png"
                   alt="Hafsa About"
@@ -311,6 +227,9 @@
       </section>
 
       <section id="projects" class="projects">
+        
+        <div class="glow-orb orb-1" style="top: 20%; right: -10%; background: var(--accent-lavender); width: 500px; height: 500px;"></div>
+        <div class="glow-orb orb-2" style="bottom: 10%; left: -10%; background: var(--accent-pink); width: 400px; height: 400px; animation-duration: 22s;"></div>
         <div class="container fade-in">
           <h2 class="section-title">Selected Works</h2>
           <div class="projects-grid">
@@ -541,7 +460,7 @@
     </main>
 
     <footer>
-      <p>© 2026 Hafsa. All rights reserved.</p>
+      <p>© 2026 Hafsa Sindikar. All rights reserved.</p>
     </footer>
     <script type="module" src="/main.js"></script>
   </body>

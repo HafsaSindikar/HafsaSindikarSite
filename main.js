@@ -181,5 +181,20 @@ if (sayHelloBtn && contactForm) {
     }
   });
 }
-
 createSparkles();
+
+// Floating words mouse parallax
+const floatingWords = document.querySelectorAll('.floating-word');
+
+window.addEventListener('mousemove', (e) => {
+  if (floatingWords.length === 0) return;
+  const x = (window.innerWidth / 2 - e.pageX) / 100;
+  const y = (window.innerHeight / 2 - e.pageY) / 100;
+
+  floatingWords.forEach(word => {
+    const speed = parseFloat(word.getAttribute('data-speed')) || 0.05;
+    const xOffset = x * speed * 100;
+    const yOffset = y * speed * 100;
+    word.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+  });
+});
